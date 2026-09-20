@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="KoreKit Mystery Box ESL Classroom Game"
+  >
+
+  <title>KoreKit Mystery Box Game</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="header">
+    <div class="header-inner">
+
+      <a href="#" class="logo">KoreKit</a>
+
+      <span class="divider">|</span>
+
+      <span class="tool-name">
+        Mystery Box
+      </span>
+
+    </div>
+  </header>
+
+
+  <!-- MAIN -->
+
+  <main class="game-container">
+
+    <section class="hero">
+
+      <h1>Mystery Box</h1>
+
+      <p>
+        Choose a box and discover what's inside!
+      </p>
+
+    </section>
+
+
+    <!-- SCOREBOARD -->
+
+    <section class="scoreboard">
+
+      <div class="team-card active-team" id="teamCard1">
+
+        <div class="team-name">
+          Team 1
+        </div>
+
+        <div class="score" id="score1">
+          0
+        </div>
+
+      </div>
+
+
+      <div class="team-card" id="teamCard2">
+
+        <div class="team-name">
+          Team 2
+        </div>
+
+        <div class="score" id="score2">
+          0
+        </div>
+
+      </div>
+
+
+      <div class="team-card" id="teamCard3">
+
+        <div class="team-name">
+          Team 3
+        </div>
+
+        <div class="score" id="score3">
+          0
+        </div>
+
+      </div>
+
+
+      <div class="team-card" id="teamCard4">
+
+        <div class="team-name">
+          Team 4
+        </div>
+
+        <div class="score" id="score4">
+          0
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- GAME INFO -->
+
+    <section class="game-info">
+
+      <div>
+        <span class="info-label">
+          CURRENT TEAM
+        </span>
+
+        <strong id="currentTeam">
+          Team 1
+        </strong>
+      </div>
+
+
+      <div>
+        <span class="info-label">
+          BOXES LEFT
+        </span>
+
+        <strong id="boxesLeft">
+          20
+        </strong>
+      </div>
+
+    </section>
+
+
+    <!-- BOX GRID -->
+
+    <section class="box-area">
+
+      <div
+        id="boxGrid"
+        class="box-grid"
+      ></div>
+
+    </section>
+
+
+    <!-- RESULT -->
+
+    <section
+      id="resultArea"
+      class="result-area hidden"
+    >
+
+      <div
+        id="resultIcon"
+        class="result-icon"
+      >
+        🎁
+      </div>
+
+      <div
+        id="resultTitle"
+        class="result-title"
+      >
+        Mystery Box!
+      </div>
+
+      <div
+        id="resultText"
+        class="result-text"
+      >
+        You found something!
+      </div>
+
+      <button
+        id="continueBtn"
+        class="continue-btn"
+      >
+        Continue
+      </button>
+
+    </section>
+
+
+    <!-- CONTROLS -->
+
+    <section class="controls">
+
+      <button
+        id="nextTeamBtn"
+        class="secondary-btn"
+      >
+        ➡️ Next Team
+      </button>
+
+      <button
+        id="newGameBtn"
+        class="reset-btn"
+      >
+        🔄 New Game
+      </button>
+
+    </section>
+
+
+    <!-- TEACHER TIP -->
+
+    <section class="teacher-tip">
+
+      <div class="tip-icon">
+        💡
+      </div>
+
+      <div>
+
+        <h3>
+          How to Play
+        </h3>
+
+        <p>
+          Ask the student a question or have them complete a
+          speaking task. If they answer correctly, their team
+          can choose a mystery box!
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <strong>KoreKit</strong>
+    · ESL Games & Resources for English Teachers
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
