@@ -1,0 +1,682 @@
+/* =====================================
+   KOREKIT MYSTERY BOX
+   ===================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f4f7fb 0%,
+      #eef4fb 100%
+    );
+
+  color: #263238;
+
+  min-height: 100vh;
+}
+
+
+/* =====================================
+   HEADER
+   ===================================== */
+
+.header {
+  height: 64px;
+
+  background: #ffffff;
+
+  border-bottom:
+    1px solid #e4e7ec;
+
+  display: flex;
+  align-items: center;
+}
+
+
+.header-inner {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: auto;
+
+  padding:
+    0 24px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.logo {
+  color: #2878d4;
+
+  font-size: 25px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+}
+
+
+.divider {
+  color: #c8cdd5;
+
+  font-size: 22px;
+}
+
+
+.tool-name {
+  color: #667085;
+
+  font-size: 15px;
+
+  font-weight: 500;
+}
+
+
+/* =====================================
+   MAIN
+   ===================================== */
+
+.game-container {
+  max-width: 1050px;
+
+  margin: 0 auto;
+
+  padding:
+    40px 20px 60px;
+}
+
+
+.hero {
+  text-align: center;
+
+  margin-bottom: 28px;
+}
+
+
+.hero h1 {
+  font-size: 42px;
+
+  color: #1f2937;
+
+  margin-bottom: 8px;
+}
+
+
+.hero p {
+  color: #667085;
+
+  font-size: 16px;
+}
+
+
+/* =====================================
+   SCOREBOARD
+   ===================================== */
+
+.scoreboard {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 12px;
+
+  margin-bottom: 15px;
+}
+
+
+.team-card {
+  background: white;
+
+  border:
+    2px solid transparent;
+
+  border-radius: 12px;
+
+  padding: 15px;
+
+  text-align: center;
+
+  box-shadow:
+    0 3px 12px
+    rgba(31, 41, 55, 0.07);
+
+  transition: 0.2s ease;
+}
+
+
+.team-card.active-team {
+  border-color: #2878d4;
+
+  transform:
+    translateY(-2px);
+}
+
+
+.team-name {
+  font-size: 13px;
+
+  color: #667085;
+
+  font-weight: 700;
+
+  margin-bottom: 5px;
+}
+
+
+.score {
+  font-size: 30px;
+
+  color: #1f2937;
+
+  font-weight: 800;
+}
+
+
+/* =====================================
+   GAME INFO
+   ===================================== */
+
+.game-info {
+  background: white;
+
+  border-radius: 10px;
+
+  padding: 12px 18px;
+
+  margin-bottom: 22px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  box-shadow:
+    0 2px 10px
+    rgba(31, 41, 55, 0.05);
+}
+
+
+.game-info strong {
+  color: #2878d4;
+
+  margin-left: 8px;
+}
+
+
+.info-label {
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  color: #98a2b3;
+}
+
+
+/* =====================================
+   BOX GRID
+   ===================================== */
+
+.box-area {
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 28px;
+
+  box-shadow:
+    0 6px 25px
+    rgba(31, 41, 55, 0.08);
+}
+
+
+.box-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap: 15px;
+}
+
+
+/* =====================================
+   MYSTERY BOX
+   ===================================== */
+
+.mystery-box {
+  aspect-ratio: 1 / 1;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #2878d4,
+      #165ba8
+    );
+
+  color: white;
+
+  cursor: pointer;
+
+  position: relative;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 6px 0 #0e4785;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+
+.mystery-box:hover {
+  transform:
+    translateY(-5px)
+    scale(1.02);
+
+  box-shadow:
+    0 11px 0 #0e4785;
+}
+
+
+.mystery-box:active {
+  transform:
+    translateY(3px);
+
+  box-shadow:
+    0 3px 0 #0e4785;
+}
+
+
+.box-number {
+  position: absolute;
+
+  top: 10px;
+
+  right: 12px;
+
+  font-size: 12px;
+
+  opacity: 0.7;
+}
+
+
+.box-icon {
+  font-size: 45px;
+
+  display: block;
+
+  margin-bottom: 6px;
+}
+
+
+.box-word {
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+/* OPENED BOX */
+
+.mystery-box.opened {
+  background: #e9edf2;
+
+  color: #98a2b3;
+
+  cursor: default;
+
+  box-shadow: none;
+
+  transform: none;
+}
+
+
+.mystery-box.opened:hover {
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+.mystery-box.opened .box-icon {
+  opacity: 0.45;
+}
+
+
+/* =====================================
+   RESULT
+   ===================================== */
+
+.result-area {
+  margin-top: 22px;
+
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 35px 25px;
+
+  text-align: center;
+
+  box-shadow:
+    0 8px 30px
+    rgba(31, 41, 55, 0.12);
+
+  animation:
+    resultIn 0.3s ease;
+}
+
+
+@keyframes resultIn {
+
+  from {
+    opacity: 0;
+
+    transform:
+      scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      scale(1);
+  }
+
+}
+
+
+.result-icon {
+  font-size: 65px;
+
+  margin-bottom: 12px;
+}
+
+
+.result-title {
+  font-size: 30px;
+
+  font-weight: 800;
+
+  color: #1f2937;
+
+  margin-bottom: 8px;
+}
+
+
+.result-text {
+  font-size: 20px;
+
+  color: #667085;
+
+  margin-bottom: 25px;
+}
+
+
+.continue-btn {
+  border: none;
+
+  background: #2878d4;
+
+  color: white;
+
+  padding:
+    12px 28px;
+
+  border-radius: 9px;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.continue-btn:hover {
+  background: #1e64b5;
+}
+
+
+/* =====================================
+   CONTROLS
+   ===================================== */
+
+.controls {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 20px;
+}
+
+
+.secondary-btn,
+.reset-btn {
+  border: none;
+
+  border-radius: 9px;
+
+  padding:
+    12px 20px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.secondary-btn {
+  background: white;
+
+  color: #2878d4;
+
+  border:
+    1px solid #d0d5dd;
+}
+
+
+.secondary-btn:hover {
+  background: #f5f8fc;
+}
+
+
+.reset-btn {
+  background: #eef0f3;
+
+  color: #475467;
+}
+
+
+.reset-btn:hover {
+  background: #e3e6ea;
+}
+
+
+/* =====================================
+   TEACHER TIP
+   ===================================== */
+
+.teacher-tip {
+  display: flex;
+
+  gap: 14px;
+
+  background: #fffdf5;
+
+  border:
+    1px solid #f1e5b8;
+
+  border-radius: 12px;
+
+  padding: 18px;
+
+  margin-top: 20px;
+}
+
+
+.tip-icon {
+  font-size: 24px;
+}
+
+
+.teacher-tip h3 {
+  font-size: 14px;
+
+  margin-bottom: 5px;
+}
+
+
+.teacher-tip p {
+  color: #667085;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =====================================
+   FOOTER
+   ===================================== */
+
+footer {
+  text-align: center;
+
+  padding:
+    25px 20px;
+
+  border-top:
+    1px solid #e4e7ec;
+
+  color: #98a2b3;
+
+  font-size: 12px;
+}
+
+
+/* =====================================
+   HIDDEN
+   ===================================== */
+
+.hidden {
+  display: none;
+}
+
+
+/* =====================================
+   RESPONSIVE
+   ===================================== */
+
+@media (max-width: 750px) {
+
+  .game-container {
+    padding:
+      30px 12px 45px;
+  }
+
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+
+  .scoreboard {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .box-area {
+    padding: 15px;
+  }
+
+
+  .box-grid {
+    grid-template-columns:
+      repeat(4, 1fr);
+
+    gap: 9px;
+  }
+
+
+  .box-icon {
+    font-size: 32px;
+  }
+
+
+  .box-word {
+    font-size: 9px;
+  }
+
+
+  .result-title {
+    font-size: 25px;
+  }
+
+
+  .result-text {
+    font-size: 17px;
+  }
+
+}
+
+
+@media (max-width: 450px) {
+
+  .box-grid {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+
+  .game-info {
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+
+  .controls {
+    flex-direction: column;
+  }
+
+
+  .secondary-btn,
+  .reset-btn {
+    width: 100%;
+  }
+
+}
