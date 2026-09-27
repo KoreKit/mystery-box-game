@@ -2,55 +2,259 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="description"
-    content="KoreKit Mystery Box ESL Classroom Game"
-  >
+  <title>KoreKit Mystery Box</title>
 
-  <title>KoreKit Mystery Box Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- HEADER -->
+  <div class="app-shell">
 
-  <header class="header">
+    <!-- HEADER -->
+    <header class="topbar">
 
-    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-mark">K</div>
 
-      <a
-        href="https://korekit.com"
-        class="logo"
-        target="_blank"
-        rel="noopener noreferrer"
+        <div>
+          <div class="brand-name">KoreKit</div>
+          <div class="brand-subtitle">ESL Mystery Box</div>
+        </div>
+      </div>
+
+      <div class="top-actions">
+
+        <button id="soundBtn" class="small-btn" type="button">
+          🔊 Sound On
+        </button>
+
+        <button id="resetBtn" class="small-btn danger" type="button">
+          ↻ New Game
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main>
+
+      <!-- HERO -->
+      <section class="hero">
+
+        <div>
+
+          <p class="eyebrow">
+            CLASSROOM GAME
+          </p>
+
+          <h1>
+            Mystery Box <span>🎁</span>
+          </h1>
+
+          <p class="hero-copy">
+            Choose a box, answer the English question,
+            then reveal the mystery!
+          </p>
+
+        </div>
+
+
+        <div class="game-info">
+
+          <div>
+            <span>Boxes left</span>
+            <strong id="boxesLeft">20</strong>
+          </div>
+
+          <div>
+            <span>Turn</span>
+            <strong id="turnNumber">1</strong>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- GAME CONTROLS -->
+      <section class="controls-card">
+
+        <div class="field">
+
+          <label for="gradeSelect">
+            Grade
+          </label>
+
+          <select id="gradeSelect">
+
+            <option value="3">
+              Grade 3
+            </option>
+
+            <option value="4">
+              Grade 4
+            </option>
+
+            <option value="5">
+              Grade 5
+            </option>
+
+            <option value="6">
+              Grade 6
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="teamCount">
+            Teams
+          </label>
+
+          <select id="teamCount">
+
+            <option value="2">
+              2 Teams
+            </option>
+
+            <option value="3">
+              3 Teams
+            </option>
+
+            <option value="4" selected>
+              4 Teams
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <button
+          id="newRoundBtn"
+          class="primary-btn"
+          type="button"
+        >
+          Start / Restart Round
+        </button>
+
+      </section>
+
+
+      <!-- TEAM SCOREBOARD -->
+      <section
+        class="teams"
+        id="teams"
+      ></section>
+
+
+      <!-- MYSTERY BOX BOARD -->
+      <section class="board-wrap">
+
+        <div class="board-heading">
+
+          <div>
+
+            <h2>
+              Choose a Mystery Box
+            </h2>
+
+            <p>
+              Every box hides a different surprise.
+            </p>
+
+          </div>
+
+
+          <div class="legend">
+
+            <span>
+              ❓ Question
+            </span>
+
+            <span>
+              🎁 Mystery
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="box-grid"
+          id="boxGrid"
+        ></div>
+
+      </section>
+
+    </main>
+
+
+    <!-- MODAL -->
+    <div
+      id="modal"
+      class="modal hidden"
+      aria-hidden="true"
+    >
+
+      <div class="modal-backdrop"></div>
+
+
+      <div
+        class="modal-card"
+        role="dialog"
+        aria-modal="true"
       >
-        KoreKit
-      </a>
 
-      <span class="divider">|</span>
+        <button
+          id="closeModal"
+          class="close-btn"
+          type="button"
+          aria-label="Close"
+        >
+          ×
+        </button>
 
-      <span class="tool-name">
-        Mystery Box
-      </span>
+
+        <div id="modalContent"></div>
+
+      </div>
 
     </div>
 
-  </header>
 
-  <!-- MAIN -->
+    <!-- FOOTER -->
+    <footer>
 
-  <main class="game-container">
+      <span>
+        Made with ♥ for English teachers
+      </span>
 
-    <section class="hero">
+      <strong>
+        KoreKit
+      </strong>
 
-      <h1>Mystery Box</h1>
+    </footer>
 
-      <p>
-        ESL Games & Resources for 
+  </div>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
+
+</body>
+</html>
