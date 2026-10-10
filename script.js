@@ -168,7 +168,13 @@ function setupTeams() {
 }
 
 function setupRewards() {
-  state.rewards = shuffle(rewardPool).slice(0, 20);
+  const rewards = [];
+
+  while (rewards.length < 20) {
+    rewards.push(...shuffle(rewardPool));
+  }
+
+  state.rewards = rewards.slice(0, 20);
 }
 
 function renderTeams() {
