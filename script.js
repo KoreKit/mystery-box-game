@@ -263,8 +263,6 @@ function revealReward() {
   state.opened.add(index);
 
   if (reward.special === "swap") {
-
-  if (reward.special === "swap") {
     doSwap();
   } else if (reward.special === "steal") {
     doSteal();
