@@ -168,7 +168,13 @@ function setupTeams() {
 }
 
 function setupRewards() {
-  state.rewards = shuffle(rewardPool).slice(0, 20);
+const rewards = [];
+
+while (rewards.length < 20) {
+rewards.push(...shuffle(rewardPool));
+}
+
+state.rewards = rewards.slice(0, 20);
 }
 
 function renderTeams() {
@@ -248,7 +254,15 @@ function openQuestion(boxIndex) {
 function revealReward() {
   const index = state.pendingBox;
   const reward = state.rewards[index];
+
+  if (!reward) {
+    console.error(`No reward found for box ${index + 1}`);
+    return;
+  }
+
   state.opened.add(index);
+
+  if (reward.special === "swap") {
 
   if (reward.special === "swap") {
     doSwap();
