@@ -45,6 +45,15 @@ button, select { font: inherit; }
   transform: rotate(-3deg);
 }
 .brand-name { color: var(--navy); font: 800 25px/1 "Baloo 2"; }
+
+.kore {
+  color: #ff3131;
+}
+
+.kit {
+  color: #1e40ff;
+}
+
 .brand-subtitle { color: var(--blue); font-weight: 800; font-size: 12px; margin-top: 2px; }
 
 .top-actions { display: flex; gap: 8px; }
