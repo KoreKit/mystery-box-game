@@ -190,8 +190,11 @@ function renderTeams() {
   ${team.score}
 </div>
       </div>
-      <div class="team-hint">${i === state.currentTeam ? "CURRENT TEAM — choose a box" : "Click to make this team active"}</div>
-    `;
+<div class="team-hint">
+  ${i === state.currentTeam
+    ? "CURRENT TEAM • Click score to edit"
+    : "Click team to activate • Click score to edit"}
+</div>    `;
     card.addEventListener("click", () => {
       state.currentTeam = i;
       renderTeams();
