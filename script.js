@@ -186,7 +186,9 @@ function renderTeams() {
     card.innerHTML = `
       <div class="team-top">
         <div class="team-name">${team.name}</div>
-        <div class="team-score">${team.score}</div>
+<div class="team-score" data-team="${i}">
+  ${team.score}
+</div>
       </div>
       <div class="team-hint">${i === state.currentTeam ? "CURRENT TEAM — choose a box" : "Click to make this team active"}</div>
     `;
@@ -195,6 +197,24 @@ function renderTeams() {
       renderTeams();
       soundSafe();
     });
+    card.querySelector(".team-score").addEventListener("click", (e) => {
+  e.stopPropagation();
+
+  const newScore = prompt(
+    `Enter new score for ${team.name}:`,
+    team.score
+  );
+
+  if (newScore === null) return;
+
+  const score = Number(newScore);
+
+  if (!Number.isNaN(score)) {
+    team.score = score;
+    renderTeams();
+    soundSafe();
+  }
+});
     el.appendChild(card);
   });
 }
