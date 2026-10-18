@@ -36,24 +36,24 @@ const questions = {
     ["What is your favorite sport?", "My favorite sport is ______."],
     ["Where is the pencil?", "It is on / under / next to ______."],
     ["What are you good at?", "I am good at ______."],
-    ["What do you want?", "I want ______."],
+    ["What do you want to eat?", "I want to eat ______."],
     ["Do you like pizza?", "Yes, I do. / No, I don't."],
-    ["Who is your best friend?", "My best friend's name is ______."],
-    ["What can you do?", "I can ______."]
+    ["What is your friend's name?", "My friend's name is ______."],
+    ["What is your favorite city?", "My favorite city is ______."]
   ],
   5: [
     ["What did you do yesterday?", "I ______ yesterday."],
     ["What do you want to be?", "I want to be a ______."],
-    ["How often do you exercise?", "I ______ every day / often / sometimes."],
+    ["How often do you exercise?", "I exercise every day / often / sometimes."],
     ["What is your favorite season?", "My favorite season is ______."],
     ["What are you going to do this weekend?", "I am going to ______."],
-    ["Which do you prefer, summer or winter?", "I prefer ______."],
+    ["Which do you like, summer or winter?", "I like ______."],
     ["What did you eat for breakfast?", "I ate ______."],
     ["Where do you want to go?", "I want to go to ______."],
     ["What is your favorite movie?", "My favorite movie is ______."],
     ["How do you get to school?", "I go by ______."],
     ["What makes you happy?", "______ makes me happy."],
-    ["What is one thing you are good at?", "I am good at ______."]
+    ["What is something you are good at?", "I am good at ______."]
   ],
   6: [
     ["What did you do last weekend?", "I ______ last weekend."],
